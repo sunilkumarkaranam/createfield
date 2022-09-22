@@ -1,6 +1,13 @@
 import ForgeUI, {  render, Fragment, Text, TextField, IssuePanel, useProductContext, useState, ButtonSet, Button, ModalDialog, Table, Row, cell, Head, Form, GlobalPage } from '@forge/ui';
 
 const App = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const onSubmit = async (formData) => {
+  
+    console.log("Data from the Form:" + formData);
+    console.log("Data from the Form:" + JSON.stringify(formData));
+  };
   return (
     <Fragment>
       <Button text="Create Custom field" onClick={() => setOpen(true)} />
