@@ -6,12 +6,11 @@ modules:
   function:
     - key: main
       handler: index.run
-<<<<<<< HEAD
-=======
+
   jira:customField:
   - key: formData.fieldkey
   - type: formData.fieldtype
   - name: formData.fieldname
->>>>>>> 3f86ed4 (bghriejygt)
+
 app:
   id: ari:cloud:ecosystem::app/79199119-2cbc-4dc7-8f79-efb626fbc800
