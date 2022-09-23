@@ -8,12 +8,15 @@ const App = () => {
     console.log("Data from the Form:" + formData);
     console.log("Data from the Form:" + JSON.stringify(formData));
 
+   
+
     var bodyData = `{
-      "searcherKey": "com.atlassian.jira.plugin.system.customfieldtypes:grouppickersearcher",
-      "name": "New custom field",
-      "description": "Custom field for picking groups",
-      "type": "com.atlassian.jira.plugin.system.customfieldtypes:grouppicker"
+      "searcherKey": ${formData.fieldkey},
+      "name": ${formData.fieldname},
+      "description": ${formData.fielddescription},
+      "type": ${formData.fieldtype}
     }`;
+
     
     const response = await api.asApp().requestJira(route`/rest/api/3/field`, {
       method: 'POST',
@@ -21,6 +24,7 @@ const App = () => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
+      
       body: bodyData
     });
 
