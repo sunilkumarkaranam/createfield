@@ -24,7 +24,7 @@ const App = () => {
       },
       body: bodyData
     });
-    console.log(await response.text());
+    //console.log(await response.text());
   };
   return (
     <Fragment>
