@@ -14,13 +14,12 @@ console.log("type: " + JSON.stringify(formData.fieldtype));
 
    
 
-    var bodyData = `{
-      "searcherKey": ${(formData.fieldkey)},
-      "name": ${(formData.fieldname)},
-      "description": ${(formData.fielddescription)},
-      "type": ${(formData.fieldtype)}
-    }`;
-
+var bodyData = `{
+  "searcherKey": "com.atlassian.jira.plugin.system.customfieldtypes:grouppickersearcher",
+  "name": "New custom field",
+  "description": "Custom field for picking groups",
+  "type": "com.atlassian.jira.plugin.system.customfieldtypes:grouppicker"
+}`;
     
     const response = await api.asApp().requestJira(route`/rest/api/3/field`, {
       method: 'POST',
