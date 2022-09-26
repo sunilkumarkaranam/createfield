@@ -7,14 +7,18 @@ const App = () => {
   
     console.log("Data from the Form:" + formData);
     console.log("Data from the Form:" + JSON.stringify(formData));
+console.log("searcherkey: " + JSON.stringify(formData.fieldkey));
+console.log("name: " + JSON.stringify(formData.fieldname));
+console.log("description: " + JSON.stringify(formData.fielddescription));
+console.log("type: " + JSON.stringify(formData.fieldtype));
 
    
 
     var bodyData = `{
-      "searcherKey": ${formData.fieldkey},
-      "name": ${formData.fieldname},
-      "description": ${formData.fielddescription},
-      "type": ${formData.fieldtype}
+      "searcherKey": ${(formData.fieldkey)},
+      "name": ${(formData.fieldname)},
+      "description": ${(formData.fielddescription)},
+      "type": ${(formData.fieldtype)}
     }`;
 
     
@@ -24,10 +28,11 @@ const App = () => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      
+
       body: bodyData
     });
 
+    
     //console.log(await response.text());
   };
   return (
