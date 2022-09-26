@@ -32,7 +32,7 @@ console.log("type: " + JSON.stringify(formData.fieldtype));
       body: bodyData
     });
 
-    
+    console.log(`Response: ${response.status} ${response.statusText}`);
     //console.log(await response.text());
   };
   return (
